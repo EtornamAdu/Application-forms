@@ -1,0 +1,215 @@
+<html>
+
+    <head>
+        
+        <style>
+            * {
+        box-sizing: border-box;
+      }
+      
+      
+      
+     input[type=text]{
+         width:20%;
+         padding: 10px;
+         border:1px solid black;
+         border-radius: 3px;
+       
+     }
+    
+     input[type=number]{
+         width:10%;
+         padding: 12px;
+         border:1px solid black;
+         border-radius: 4px;
+     }
+     input[type=program]{
+         width:10%;
+         padding: 12px;
+         border:1px solid black;
+         border-radius: 4px;
+     }
+     select{
+         width: 10%;
+         padding: 10px;
+         border: 1px solidblack;
+     }
+     body{
+         background: white;
+     }
+    </style>
+    <title>www.UCCAPPLY.com</title>
+<html>
+
+<head>
+<title> www.UCCAPPLY.com</title>
+
+</head>
+
+<body>
+<center> <h1> <font color= 'black';>UCC  APPLICATION FORM </center></h1> </font>
+<center><h1 style="color:blue;">University of Cape Coast</h1></center>
+<center><img src="Ucc.jpg" width="200" height="200" alt="UCC"></center>
+<align left><h2 style="color:black;">STUDENT'S DETAILS</h3></center>
+<br></br>
+    
+    
+    
+    </head>
+    <div class="header">
+        <div class="img">
+          
+  
+         
+  
+
+	   
+     
+        
+    
+        <h3 style="color: white;"> UCC ONLINE APPLICATION FORM</h3>
+    </div>
+    </div><p></p>
+
+    <body>
+      
+        <div class="reg_form">
+        <form >
+            <fieldset>
+                <legend> Biodata</legend>
+            <label for="first name">First name:</label>
+            <input type="text"name="first name" placeholder="first name"required>
+        
+            <label for="last name">Last name:</label>
+            <input type="text"name="first name" placeholder="last name"required>
+            <p></p>
+            <div class="dob">
+                <label for="Date of Birth"> Date Of Birth</label>
+                <input type="text" id="txtDate" onblur = "ValidateDOB()" required>
+<span class="error" id="lblError"></span>
+<br>
+
+<button onclick="ValidateDOB()">Check For Eligibility</button>
+
+<script type="text/javascript">
+    function ValidateDOB() {
+        var lblError = document.getElementById("lblError");
+        var dateString = document.getElementById("txtDate").value;
+        var regex = /(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
+
+        if (regex.test(dateString)) {
+            var parts = dateString.split("/");
+            var dtDOB = new Date(parts[1] + "/" + parts[0] + "/" + parts[2]);
+            var dtCurrent = new Date();
+            lblError.innerHTML = "Eligibility 18 years and above ONLY."
+            if (dtCurrent.getFullYear() - dtDOB.getFullYear() < 18) {
+                return false;
+            }
+ 
+            if (dtCurrent.getFullYear() - dtDOB.getFullYear() == 18) {
+ 
+               
+                if (dtCurrent.getMonth() < dtDOB.getMonth()) {
+                    return false;
+                }
+                if (dtCurrent.getMonth() == dtDOB.getMonth()) {
+                  
+                    if (dtCurrent.getDate() < dtDOB.getDate()) {
+                        return false;
+                    }
+                }
+            }
+            lblError.innerHTML = "You are eligible";
+            return true;
+        } else {
+            lblError.innerHTML = "Enter date in dd/MM/yyyy format ONLY"
+            return false;
+        }
+    }
+</script>
+</div><br>
+
+</fieldset>
+
+    
+    <p></p>
+    <div class="program">
+        <fieldset>
+            <legend>Other Info</legend>
+        
+
+     <div class>
+        <label for="former school"> Former School:</label>
+        <input type= "text" name="former school" placeholder="former school"required>
+    </div><p></p>
+   
+<div class="aggregate">
+<label for="aggregate">Aggregate:</label>
+<input id="id1" type="number" min="6" max="36" >
+<button onclick="myFunction()">Check For Eligibility</button>
+
+<p id="aggregate"></p>
+<script>
+    function myFunction() {
+      var inpObj = document.getElementById("id1");
+      if (!inpObj.checkValidity()) {
+        document.getElementById("aggregate").innerHTML = inpObj.validationMessage;
+      } else {
+        document.getElementById("aggregate").innerHTML = "You qualify";
+      } 
+    } 
+    
+    </script>
+
+    
+                     Gender:
+                    <label for="gender-male">Male</label>
+                    <input type="radio"name="gender-choice"value="choice-1" id="male">
+                    <label for="gender-female">Female</label>
+                    
+                    <input type="radio"name="gender-choice"value="choice-2" id="female"><p></p>
+                    Cafeteria Services
+                    <input type="radio" name="programType" id="basicProgram" value="Basic" />Yes
+                    <input type="radio" name="programType" id="proProgram" value="Pro" checked /> No<p></p>
+                    Program
+                    <select class="form-control" name="program" id="program" >
+                     <option value="0"selected disabled>Program </option>
+                      <option value="5000">HEALTH INFORMATION (5000 cedis)</option>
+                      <option value="3500">MATHEMATICS(3500 cedis) </option>
+                      <option value="7000">MEDICINE (7000 cedis)</option>
+                      <option value="2500">INTERNATIONAL BUSINESS (2500 cedis)</option>
+                      <option value="2000">POLITICAL SCIENCE (2000 cedis)</option>
+                      
+                    
+                    </select><p></p>
+                    
+                    Halls:
+                    
+                    <select class="form-control" name="lodging" id="lodging" >
+                      <option value="0"selected disabled>Lodging Fees</option>
+                      <option value="400">SRC</option>
+                      <option value="300">VALCO</option>
+                      <option value="300">ADEHYE</option>
+                      <option value="350">SSNIT</option>
+                      <option value="300">CASFORD</option>
+                      
+                 
+                    </select><p></p>
+                    
+                    Total price :
+                    
+                    <input name="totalAmount" id="totalAmount" type="text" readonly>
+                    </div>
+                    </div>
+                    </div>
+                    </fieldset>
+                    
+<div class="footer">
+    <fieldset>
+        <legend>Agree To Terms</legend>
+                <label for="agree">Agree:</label>
+    <input type="checkbox" name="agree">
+    <button type="submit " value="submit" class="button">Submit</button>
+</div>
+                    </div></form>
+                </html>
